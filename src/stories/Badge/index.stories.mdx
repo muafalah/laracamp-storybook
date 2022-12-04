@@ -1,5 +1,6 @@
 import { Meta, Canvas, Story, Source } from "@storybook/addon-docs";
 import dedent from "ts-dedent";
+import "assets/css/index.css";
 import Sample from "./example/Sample";
 
 <Meta title="Components/Badge" />
@@ -8,7 +9,7 @@ import Sample from "./example/Sample";
 
 A most important component that simply let user interact with the app, [[Default Example](/docs/components-badge-example--success)] if you want to see in action
 
-export const Template = (args) => <Badge {...args} />;
+export const Template = (args) => <Sample {...args} />;
 Template.args = {
   state: "success",
 };

@@ -1,11 +1,27 @@
 import React from 'react'
+import configs from './configs'
 
-type Props = {}
+type Props = {
+    children: React.ReactNode,
+    state: "success" | "warning" | "danger",
+    className?: string,
+}
 
-function Badge({ }: Props) {
+function Badge({ children, state, className }: Props) {
+
+    const combineClassName = [
+        "py-1 px-4 rounded-full inline-flex items-center",
+        configs?.state?.[state] || "",
+        className || "",
+    ]
+
     return (
-        <div>Badge</div>
+        <span className={combineClassName.join(" ")}>{children}</span>
     )
 }
+
+// Badge.defaultProps = {
+//     state: "success"
+// }
 
 export default Badge
